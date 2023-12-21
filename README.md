@@ -20,7 +20,7 @@ thus far this deficiency has not been addressed.
 
 As a result, if you want to include the gRPC calls (and anything else that's broken by shading + relocating) in 
 the OpenTelemetry traces, you will need a custom version of the driver. The [build_arrow.sh](build_arrow.sh) 
-script will do this by cloing the apache/arrow repository, switching to the 14.0.2 tag, applying the 
+script will do this by cloning the apache/arrow repository, switching to the 14.0.2 tag, applying the 
 [fix_jdbc_shading.patch](fix_jdbc_shading.patch) patch file, and then building and installing the corresponding JAR 
 files in a custom local Maven repository, which is referenced from [pom.xml](pom.xml).
 
