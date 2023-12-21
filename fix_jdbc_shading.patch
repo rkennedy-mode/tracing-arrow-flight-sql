@@ -1,0 +1,14 @@
+diff --git a/java/flight/flight-sql-jdbc-driver/pom.xml b/java/flight/flight-sql-jdbc-driver/pom.xml
+index d4ef1b4ea..374549b76 100644
+--- a/java/flight/flight-sql-jdbc-driver/pom.xml
++++ b/java/flight/flight-sql-jdbc-driver/pom.xml
+@@ -166,7 +166,8 @@
+                             <goal>shade</goal>
+                         </goals>
+                         <configuration>
+-                            <shadedArtifactAttached>false</shadedArtifactAttached>
++                            <shadedArtifactAttached>true</shadedArtifactAttached>
++                            <shadedClassifierName>shaded</shadedClassifierName>
+                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                             <minimizeJar>false</minimizeJar>
+                             <artifactSet>
