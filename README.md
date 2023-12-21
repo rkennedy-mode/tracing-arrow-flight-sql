@@ -45,6 +45,13 @@ $ tree .m2_local| grep flight-sql-jdbc-driver
 │   │   │       │   └── flight-sql-jdbc-driver-14.0.2.pom
 ```
 
+If you find after this that you're still not getting gRPC spans in your traces, you may need to purge the "stock" 
+JDBC driver from your primary local repo (typically `~/.m2/repository`):
+
+```shell
+./mvnw dependency:purge-local-repository -DmanualInclude=org.apache.arrow:flight-sql-jdbc-driver:14.0.2
+```
+
 ## Configuring OpenTelemetry
 
 The program utilizes [OpenTelemetry Automatic Instrumentation](https://opentelemetry.io/docs/instrumentation/java/automatic/) 
